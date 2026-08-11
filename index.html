@@ -1,360 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabha A | Senior Software Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prabha A | Senior Software Engineer</title>
 
-    <meta name="description"
-        content="Senior Full Stack Engineer with 6+ years experience in Java, Spring Boot, Node.js, NestJS, Python, Cloud Architecture and System Design.">
+<meta name="description"
+content="Senior Full Stack Software Engineer with 6+ years of experience building FinTech, Analytics, Subscription Billing and Sports Management Platforms.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<style>
+:root{
+    --bg:#0f172a;
+    --card:#111827;
+    --primary:#3b82f6;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:#1e293b;
+}
 
-        body{
-            font-family:'Inter',sans-serif;
-            background:#0B1120;
-            color:#fff;
-            line-height:1.7;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .container{
-            width:90%;
-            max-width:1200px;
-            margin:auto;
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+}
 
-        nav{
-            position:fixed;
-            top:0;
-            width:100%;
-            backdrop-filter:blur(12px);
-            background:rgba(11,17,32,.8);
-            border-bottom:1px solid rgba(255,255,255,.08);
-            z-index:1000;
-        }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 24px;
+}
 
-        nav .container{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 0;
-        }
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    z-index:100;
+}
 
-        .logo{
-            font-size:24px;
-            font-weight:800;
-        }
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
 
-        .nav-links{
-            display:flex;
-            gap:30px;
-        }
+.logo{
+    font-weight:800;
+    font-size:22px;
+}
 
-        .nav-links a{
-            color:#cbd5e1;
-            text-decoration:none;
-        }
+.nav-links{
+    display:flex;
+    gap:30px;
+}
 
-        .hero{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-        }
+.nav-links a{
+    color:var(--muted);
+    text-decoration:none;
+}
 
-        .badge{
-            display:inline-block;
-            padding:8px 16px;
-            border-radius:999px;
-            background:rgba(59,130,246,.15);
-            color:#60a5fa;
-            margin-bottom:20px;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
 
-        h1{
-            font-size:72px;
-            line-height:1.1;
-            margin-bottom:24px;
-        }
+.badge{
+    display:inline-block;
+    background:rgba(59,130,246,.15);
+    color:#60a5fa;
+    padding:8px 18px;
+    border-radius:999px;
+    margin-bottom:24px;
+}
 
-        .hero p{
-            max-width:700px;
-            font-size:22px;
-            color:#94a3b8;
-        }
+.hero h1{
+    font-size:72px;
+    line-height:1.05;
+    max-width:900px;
+    margin-bottom:24px;
+}
 
-        .cta{
-            margin-top:40px;
-            display:flex;
-            gap:20px;
-        }
+.hero p{
+    font-size:22px;
+    color:var(--muted);
+    max-width:750px;
+}
 
-        .btn{
-            padding:14px 28px;
-            border-radius:12px;
-            text-decoration:none;
-            font-weight:600;
-        }
+.buttons{
+    margin-top:40px;
+    display:flex;
+    gap:20px;
+}
 
-        .btn-primary{
-            background:#2563eb;
-            color:white;
-        }
+.btn{
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+}
 
-        .btn-secondary{
-            border:1px solid #334155;
-            color:white;
-        }
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
 
-        section{
-            padding:120px 0;
-        }
+.btn-secondary{
+    border:1px solid var(--border);
+    color:white;
+}
 
-        .section-title{
-            font-size:48px;
-            margin-bottom:60px;
-        }
+section{
+    padding:120px 0;
+}
 
-        .stats{
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            gap:24px;
-        }
+.section-title{
+    font-size:48px;
+    margin-bottom:50px;
+}
 
-        .card{
-            background:#111827;
-            border:1px solid rgba(255,255,255,.05);
-            border-radius:20px;
-            padding:30px;
-        }
+.grid{
+    display:grid;
+    gap:24px;
+}
 
-        .stat-number{
-            font-size:42px;
-            font-weight:800;
-            color:#60a5fa;
-        }
+.stats{
+    grid-template-columns:repeat(4,1fr);
+}
 
-        .skills-grid{
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            gap:20px;
-        }
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:32px;
+}
 
-        .skill{
-            background:#111827;
-            padding:20px;
-            border-radius:16px;
-            text-align:center;
-        }
+.stat-number{
+    font-size:48px;
+    font-weight:800;
+    color:#60a5fa;
+}
 
-        .projects{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-            gap:25px;
-        }
+.projects{
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+}
 
-        .project-card{
-            background:#111827;
-            border-radius:20px;
-            padding:30px;
-        }
+.project h3{
+    margin-bottom:15px;
+}
 
-        .project-card h3{
-            margin-bottom:15px;
-        }
+.project p{
+    color:var(--muted);
+}
 
-        .project-card p{
-            color:#94a3b8;
-        }
+.tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
 
-        footer{
-            padding:50px 0;
-            text-align:center;
-            border-top:1px solid rgba(255,255,255,.08);
-            color:#94a3b8;
-        }
+.tech span{
+    background:#1e293b;
+    padding:8px 14px;
+    border-radius:999px;
+}
 
-        @media(max-width:768px){
+footer{
+    text-align:center;
+    padding:40px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+}
 
-            h1{
-                font-size:42px;
-            }
+@media(max-width:768px){
 
-            .stats,
-            .skills-grid{
-                grid-template-columns:1fr;
-            }
+.hero h1{
+    font-size:42px;
+}
 
-            .nav-links{
-                display:none;
-            }
-        }
-    </style>
+.stats{
+    grid-template-columns:1fr;
+}
+
+.nav-links{
+    display:none;
+}
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div class="container">
-        <div class="logo">Prabha K</div>
+<div class="container">
+<div class="logo">Prabha K</div>
 
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
 </nav>
 
 <section class="hero">
-    <div class="container">
+<div class="container">
 
-        <div class="badge">
-            Senior Software Engineer • 6+ Years Experience
-        </div>
+<div class="badge">
+Senior Software Engineer • 6+ Years Experience
+</div>
 
-        <h1>
-            Building Scalable Software
-            For Businesses & Startups
-        </h1>
+<h1>
+Building FinTech, Analytics &
+Enterprise Platforms at Scale
+</h1>
 
-        <p>
-            Senior Full Stack Engineer specializing in Java, Spring Boot,
-            Node.js, NestJS, Express.js, Python, Django, DBMS, Cloud Architecture,
-            Microservices and System Design.
-        </p>
+<p>
+Full Stack Software Engineer specializing in Java, Spring Boot,
+Node.js, NestJS, Express.js and Python. Experienced in system design,
+microservices architecture, team leadership and enterprise software development.
+</p>
 
-        <div class="cta">
-            <a href="#projects" class="btn btn-primary">
-                View Projects
-            </a>
+<div class="buttons">
+<a href="#projects" class="btn btn-primary">View Projects</a>
+<a href="#contact" class="btn btn-secondary">Contact Me</a>
+</div>
 
-            <a href="#contact" class="btn btn-secondary">
-                Contact Me
-            </a>
-        </div>
-
-    </div>
+</div>
 </section>
 
 <section id="about">
-    <div class="container">
+<div class="container">
 
-        <h2 class="section-title">Experience Highlights</h2>
+<h2 class="section-title">Career Highlights</h2>
 
-        <div class="stats">
+<div class="grid stats">
 
-            <div class="card">
-                <div class="stat-number">6+</div>
-                <p>Years Experience</p>
-            </div>
+<div class="card">
+<div class="stat-number">6+</div>
+Years Experience
+</div>
 
-            <div class="card">
-                <div class="stat-number">20+</div>
-                <p>Projects Delivered</p>
-            </div>
+<div class="card">
+<div class="stat-number">20+</div>
+Projects Delivered
+</div>
 
-            <div class="card">
-                <div class="stat-number">5+</div>
-                <p>Engineers Mentored</p>
-            </div>
+<div class="card">
+<div class="stat-number">5+</div>
+Engineers Mentored
+</div>
 
-            <div class="card">
-                <div class="stat-number">100%</div>
-                <p>Client Focused</p>
-            </div>
+<div class="card">
+<div class="stat-number">100%</div>
+Full Stack Focus
+</div>
 
-        </div>
+</div>
 
-    </div>
-</section>
-
-<section id="skills">
-    <div class="container">
-
-        <h2 class="section-title">Technology Stack</h2>
-
-        <div class="skills-grid">
-
-            <div class="skill">Java</div>
-            <div class="skill">Spring Boot</div>
-            <div class="skill">Node.js</div>
-            <div class="skill">NestJS</div>
-
-            <div class="skill">Express.js</div>
-            <div class="skill">Python</div>
-            <div class="skill">PostgreSQL</div>
-            <div class="skill">MongoDB</div>
-
-            <div class="skill">AWS</div>
-            <div class="skill">Docker</div>
-            <div class="skill">Microservices</div>
-            <div class="skill">System Design</div>
-
-        </div>
-
-    </div>
+</div>
 </section>
 
 <section id="projects">
-    <div class="container">
+<div class="container">
 
-        <h2 class="section-title">Featured Projects</h2>
+<h2 class="section-title">Products I've Built</h2>
 
-        <div class="projects">
+<div class="grid projects">
 
-            <div class="project-card">
-                <h3>Loan Management Platform</h3>
-                <p>
-                    Designed and developed a complete loan lifecycle platform
-                    including customer onboarding, approval workflows,
-                    repayment tracking and reporting.
-                </p>
-            </div>
+<div class="card project">
+<h3>Loan Management Platform</h3>
+<p>
+Built customer onboarding, approval workflows,
+repayment tracking, reporting and financial operations.
+</p>
+</div>
 
-            <div class="project-card">
-                <h3>Sports Management Platform</h3>
-                <p>
-                    Built APIs, reporting systems and integrations serving
-                    sports organizations and clubs.
-                </p>
-            </div>
+<div class="card project">
+<h3>Expense Management System</h3>
+<p>
+Developed approval workflows, reimbursement tracking,
+financial dashboards and reporting systems.
+</p>
+</div>
 
-            <div class="project-card">
-                <h3>Enterprise Membership System</h3>
-                <p>
-                    Developed scalable backend services handling payments,
-                    memberships and reporting at scale.
-                </p>
-            </div>
+<div class="card project">
+<h3>Analytics Platform</h3>
+<p>
+Created business intelligence dashboards,
+aggregations, reporting pipelines and KPI tracking.
+</p>
+</div>
 
-        </div>
+<div class="card project">
+<h3>Sports Club Management</h3>
+<p>
+Built membership management, billing,
+competition administration and integrations.
+</p>
+</div>
 
-    </div>
+<div class="card project">
+<h3>Subscription Billing Platform</h3>
+<p>
+Implemented recurring billing,
+invoice generation and payment workflows.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+
+<h2 class="section-title">Technology Stack</h2>
+
+<div class="tech">
+<span>Java</span>
+<span>Spring Boot</span>
+<span>DBMS</span>
+<span>Node.js</span>
+<span>NestJS</span>
+<span>Express.js</span>
+<span>FoalTS</span>
+<span>Python</span>
+<span>TypeScript</span>
+<span>PostgreSQL</span>
+<span>MongoDB</span>
+<span>AWS</span>
+<span>Docker</span>
+<span>Microservices</span>
+<span>System Design</span>
+<span>LLD</span>
+<span>HLD</span>
+</div>
+
+</div>
 </section>
 
 <section id="contact">
-    <div class="container">
+<div class="container">
 
-        <h2 class="section-title">Let's Build Something Great</h2>
+<h2 class="section-title">Let's Build Something Great</h2>
 
-        <p>
-            Open to Senior Engineering, Technical Leadership and Freelance Opportunities.
-        </p>
+<p style="color:#94a3b8;font-size:20px;">
+Open to Senior Software Engineering,
+Technical Leadership and Freelance Opportunities.
+</p>
 
-    </div>
+</div>
 </section>
 
 <footer>
-    © 2026 Prabha K. Senior Full Stack Engineer.
+© 2026 Prabha A • Senior Full Stack Software Engineer
 </footer>
 
 </body>
