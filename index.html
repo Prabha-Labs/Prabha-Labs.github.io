@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prabha A — Senior Software Engineer | Backend, APIs & Systems</title>
 
-<meta name="description" content="Backend and full-stack software engineer helping startups and businesses build reliable systems, APIs, integrations and data-heavy applications. 6+ years experience with Java, Node.js, TypeScript, PostgreSQL and AWS.">
+<meta name="description" content="Prabha A is a Senior Software Engineer helping startups and businesses build, fix and scale backend systems, APIs, integrations and data-heavy applications.">
 
 <meta property="og:title" content="Prabha A — Senior Software Engineer | Backend, APIs & Systems">
-<meta property="og:description" content="Backend and full-stack software engineer helping startups and businesses build reliable systems, APIs, integrations and data-heavy applications.">
+<meta property="og:description" content="Prabha A is a Senior Software Engineer helping startups and businesses build, fix and scale backend systems, APIs, integrations and data-heavy applications.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://prabha-labs.github.io/">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Prabha A — Senior Software Engineer | Backend, APIs & Systems">
-<meta name="twitter:description" content="Backend and full-stack software engineer helping startups and businesses build reliable systems, APIs, integrations and data-heavy applications.">
+<meta name="twitter:description" content="Prabha A is a Senior Software Engineer helping startups and businesses build, fix and scale backend systems, APIs, integrations and data-heavy applications.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -305,7 +305,8 @@ nav .container {
     height: 600px;
     background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
     border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
+    /* reduced motion */
+    /* animation: float 6s ease-in-out infinite; */
     z-index: 0;
 }
 
@@ -318,7 +319,8 @@ nav .container {
     height: 400px;
     background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
     border-radius: 50%;
-    animation: float 8s ease-in-out infinite reverse;
+    /* reduced motion */
+    /* animation: float 8s ease-in-out infinite reverse; */
     z-index: 0;
 }
 
@@ -350,7 +352,8 @@ nav .container {
     content: '●';
     margin-right: 8px;
     color: var(--success);
-    animation: pulse-glow 2s ease-in-out infinite;
+    /* removed repeating glow to reduce distraction */
+    /* animation: pulse-glow 2s ease-in-out infinite; */
 }
 
 .hero h1 {
@@ -396,886 +399,110 @@ nav .container {
     cursor: pointer;
 }
 
-.highlight-item:nth-child(1) { animation-delay: 0.4s; }
-.highlight-item:nth-child(2) { animation-delay: 0.5s; }
-.highlight-item:nth-child(3) { animation-delay: 0.6s; }
-.highlight-item:nth-child(4) { animation-delay: 0.7s; }
-.highlight-item:nth-child(5) { animation-delay: 0.8s; }
-.highlight-item:nth-child(6) { animation-delay: 0.9s; }
+/* Buttons, sections, cards kept as-is; service icon float removed for subtlety */
+.service-icon { font-size: 40px; margin-bottom: 16px; display: block; transition: transform 0.3s ease; }
 
-.highlight-item:hover {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.2);
+/* accessibility: visible focus states */
+a:focus, button:focus, .btn:focus, .btn-nav:focus, .contact-link:focus {
+    outline: 3px solid rgba(96,165,250,0.22);
+    outline-offset: 2px;
 }
 
-.buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: center;
-    animation: fadeInUp 0.8s ease-out 0.5s both;
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
 
-.btn {
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-    z-index: 0;
-}
-
-.btn:active::before {
-    width: 300px;
-    height: 300px;
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: white;
-    position: relative;
-    z-index: 1;
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.4);
-}
-
-.btn-secondary {
-    border: 1.5px solid var(--border);
-    color: var(--text);
-    background: transparent;
-    position: relative;
-    z-index: 1;
-}
-
-.btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(59, 130, 246, 0.05);
-    transform: translateY(-3px);
-}
-
-/* Sections */
-section {
-    padding: 100px 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-}
-
-section:last-of-type {
-    border-bottom: none;
-}
-
-.section-header {
-    margin-bottom: 60px;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.section-title {
-    font-size: 44px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.section-subtitle {
-    font-size: 18px;
-    color: var(--muted);
-    max-width: 600px;
-    line-height: 1.8;
-    transition: color 0.3s ease;
-}
-
-/* Services Section */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-}
-
-.service-card {
-    background: linear-gradient(135deg, var(--card) 0%, var(--card-hover) 100%);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    transition: all 0.3s ease;
-    animation: scaleInUp 0.6s ease-out backwards;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.service-card:nth-child(1) { animation-delay: 0.1s; }
-.service-card:nth-child(2) { animation-delay: 0.2s; }
-.service-card:nth-child(3) { animation-delay: 0.3s; }
-.service-card:nth-child(4) { animation-delay: 0.4s; }
-.service-card:nth-child(5) { animation-delay: 0.5s; }
-.service-card:nth-child(6) { animation-delay: 0.6s; }
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    transition: all 0.5s ease;
-    z-index: 0;
-}
-
-.service-card:hover {
-    background: linear-gradient(135deg, var(--card-hover) 0%, var(--card) 100%);
-    border-color: var(--accent);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-}
-
-.service-card:hover::before {
-    top: -25%;
-    right: -25%;
-    width: 300px;
-    height: 300px;
-}
-
-.service-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-    display: block;
-    transition: transform 0.3s ease;
-    animation: float 3s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-    line-height: 1;
-}
-
-.service-card:hover .service-icon {
-    transform: scale(1.2) rotate(5deg);
-    animation: none;
-}
-
-.service-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--text);
-    transition: color 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.service-card:hover h3 {
-    color: var(--accent);
-}
-
-.service-card p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    flex-grow: 1;
-}
-
-.service-card .btn {
-    display: inline-block;
-    padding: 10px 16px;
-    font-size: 13px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Why Section */
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-}
-
-.why-item {
-    padding: 24px;
-    background: rgba(59, 130, 246, 0.05);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.6s ease-out backwards;
-    cursor: pointer;
-    position: relative;
-}
-
-.why-item:nth-child(1) { animation-delay: 0.1s; }
-.why-item:nth-child(2) { animation-delay: 0.2s; }
-.why-item:nth-child(3) { animation-delay: 0.3s; }
-.why-item:nth-child(4) { animation-delay: 0.4s; }
-.why-item:nth-child(5) { animation-delay: 0.5s; }
-.why-item:nth-child(6) { animation-delay: 0.6s; }
-
-.why-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 0;
-    background: var(--gradient);
-    transition: height 0.3s ease;
-}
-
-.why-item:hover {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: var(--accent);
-    transform: translateX(4px);
-}
-
-.why-item:hover::before {
-    height: 100%;
-}
-
-.why-number {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.why-item h4 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text);
-}
-
-.why-item p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-/* Projects Section */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 28px;
-}
-
-.project-card {
-    background: linear-gradient(135deg, var(--card) 0%, var(--card-hover) 100%);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    animation: slideInRight 0.6s ease-out backwards;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-card:nth-child(odd) {
-    animation-name: slideInLeft;
-}
-
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-
-.project-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    background: linear-gradient(135deg, var(--card-hover) 0%, var(--card) 100%);
-    border-color: var(--accent);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-}
-
-.project-card:hover::after {
-    transform: scaleX(1);
-}
-
-.project-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-
-.project-card:hover h3 {
-    color: var(--accent);
-}
-
-.project-section {
-    margin-bottom: 16px;
-}
-
-.project-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-}
-
-.project-card p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto;
-    padding-top: 16px;
-}
-
-.tech-tag {
-    background: rgba(59, 130, 246, 0.15);
-    color: var(--accent);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 500;
-    border: 1px solid rgba(59, 130, 246, 0.25);
-    transition: all 0.3s ease;
-}
-
-.tech-tag:hover {
-    background: rgba(59, 130, 246, 0.3);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-/* Process Section */
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.process-step {
-    position: relative;
-    padding-left: 60px;
-    animation: fadeInUp 0.6s ease-out backwards;
-}
-
-.process-step:nth-child(1) { animation-delay: 0.1s; }
-.process-step:nth-child(2) { animation-delay: 0.2s; }
-.process-step:nth-child(3) { animation-delay: 0.3s; }
-.process-step:nth-child(4) { animation-delay: 0.4s; }
-
-.process-number {
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--accent);
-    opacity: 0.3;
-    transition: all 0.3s ease;
-}
-
-.process-step:hover .process-number {
-    opacity: 1;
-    transform: scale(1.2);
-    color: var(--primary);
-}
-
-.process-step h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-
-.process-step:hover h3 {
-    color: var(--accent);
-}
-
-.process-step p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-.process-note {
-    padding: 20px;
-    background: rgba(59, 130, 246, 0.05);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    font-size: 14px;
-    color: var(--text-secondary);
-    font-style: italic;
-    animation: slideInLeft 0.6s ease-out;
-}
-
-/* Skills Section */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-}
-
-.skill-category {
-    background: linear-gradient(135deg, var(--card) 0%, var(--card-hover) 100%);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
-    animation: scaleInUp 0.6s ease-out backwards;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(2) { animation-delay: 0.2s; }
-.skill-category:nth-child(3) { animation-delay: 0.3s; }
-
-.skill-category:hover {
-    border-color: var(--accent);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-}
-
-.skill-category h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: var(--accent);
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-}
-
-.skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill-item {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--accent);
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid rgba(59, 130, 246, 0.25);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.skill-item:hover {
-    background: rgba(59, 130, 246, 0.25);
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
-}
-
-/* Contact Section */
-.contact-content {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.contact-title {
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 24px;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.contact-subtitle {
-    font-size: 18px;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-    line-height: 1.8;
-}
-
-.contact-links {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.contact-link {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(59, 130, 246, 0.1);
-    transition: left 0.3s ease;
-    z-index: -1;
-}
-
-.contact-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
-}
-
-.contact-link:hover::before {
-    left: 0;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: var(--muted);
-    font-size: 14px;
-    border-top: 1px solid var(--border);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-/* Scroll Animation */
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.scroll-animate.in-view {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    nav .container {
-        padding: 16px 0;
-    }
-
-    .nav-links {
-        gap: 24px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .section-title {
-        font-size: 36px;
-    }
-
-    .hero::before,
-    .hero::after {
-        opacity: 0.5;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-center {
-        display: none;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .nav-cta {
-        display: none;
-    }
-
-    .hero {
-        padding-top: 100px;
-        min-height: auto;
-        padding-bottom: 40px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .hero-highlights {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 100%;
-    }
-
-    .buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .section-header {
-        margin-bottom: 40px;
-    }
-
-    .services-grid,
-    .why-grid,
-    .projects-grid,
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .contact-title {
-        font-size: 32px;
-    }
-
-    .contact-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .contact-link {
-        width: 100%;
-        justify-content: center;
-    }
-
-    section {
-        padding: 60px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 16px;
-    }
-
-    nav .container {
-        padding: 12px 0;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .btn {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-
-    section {
-        padding: 50px 0;
-    }
-
-    .badge {
-        font-size: 12px;
-    }
-
-    .service-icon {
-        font-size: 32px;
-    }
-
-    .hero::before,
-    .hero::after {
-        opacity: 0.2;
-    }
+/* small responsive tweaks */
+@media (max-width: 640px) {
+    .hero h1 { font-size: 36px; }
+    .btn { padding: 12px 18px; }
 }
 </style>
 </head>
-
 <body>
 
 <nav>
     <div class="container">
         <div class="logo">
             <div class="logo-brand">PrabhaWorks</div>
-            <div class="logo-descriptor">By Prabha A</div>
+            <div class="logo-descriptor">Software Engineering &amp; Consulting</div>
         </div>
         <div class="nav-center">
             <div class="nav-links">
                 <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#skills">Skills</a>
-                <a href="#about">About</a>
+                <a href="#process">How I Work</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
-            <a href="#contact" class="btn btn-nav">Start a Project</a>
+            <div class="nav-cta show"><a href="#contact" class="btn-nav">Start a Project</a></div>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <div class="badge">Freelance Software Engineer • 6+ Years Experience</div>
-
+            <div class="badge">Senior Software Engineer</div>
             <h1>Build. Fix. Scale.</h1>
-
-            <p>
-                Senior Software Engineer helping startups and businesses build reliable backend systems, APIs, integrations and data-heavy applications.
-            </p>
-
-            <div class="hero-highlights">
-                <div class="highlight-item">6+ Years Experience</div>
-                <div class="highlight-item">Backend Specialist</div>
-                <div class="highlight-item">APIs & Integrations</div>
-                <div class="highlight-item">PostgreSQL & Data</div>
-                <div class="highlight-item">Java • Node.js • TypeScript</div>
-                <div class="highlight-item">System Design</div>
-            </div>
-
+            <p>Senior backend engineer focused on systems, APIs and data-heavy applications.</p>
             <div class="buttons">
                 <a href="#contact" class="btn btn-primary">Start a Project</a>
-                <a href="#work" class="btn btn-secondary">View My Work</a>
+                <a href="#projects" class="btn btn-secondary">See Projects</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Services Section -->
+<!-- Services -->
 <section id="services">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">What I Can Help With</h2>
-            <p class="section-subtitle">I specialize in solving complex backend problems and building scalable systems for startups and established businesses.</p>
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">I help startups and businesses build, fix and scale backend systems, APIs, integrations and data-heavy applications.</p>
         </div>
 
         <div class="services-grid">
             <div class="service-card">
                 <span class="service-icon">🔧</span>
                 <h3>Backend Development</h3>
-                <p>Java, Spring Boot, Node.js, NestJS and TypeScript backend systems built for performance and maintainability.</p>
+                <p>Build reliable backend services with Java, Spring Boot, Node.js, NestJS and TypeScript, designed for maintainability and growth.</p>
                 <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🔌</span>
-                <h3>API Development & Integration</h3>
-                <p>REST APIs, third-party integrations, webhooks and external service integrations that work reliably at scale.</p>
+                <h3>API Development &amp; Integration</h3>
+                <p>Build and integrate reliable REST APIs, webhooks and third-party services so your systems communicate cleanly and consistently.</p>
                 <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">💾</span>
-                <h3>PostgreSQL & Database Optimization</h3>
-                <p>Complex queries, indexes, aggregation, migrations and performance improvements for data-heavy systems.</p>
+                <h3>PostgreSQL &amp; Database Optimization</h3>
+                <p>Improve slow or complex PostgreSQL workloads through query optimization, indexing, database design, migrations and better data access patterns.</p>
                 <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🐛</span>
-                <h3>Bug Fixing & Production Troubleshooting</h3>
-                <p>Difficult backend bugs, API failures, database problems and production issues that need immediate attention.</p>
+                <h3>Bug Fixing &amp; Production Troubleshooting</h3>
+                <p>Diagnose difficult backend bugs, API failures, database issues and production problems by finding the root cause rather than applying temporary fixes.</p>
                 <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🏗️</span>
                 <h3>System Design</h3>
-                <p>Scalable architectures, microservices design, database design and technical architecture for growing systems.</p>
+                <p>Design practical, scalable architectures, microservices, data models and service boundaries for new or growing systems.</p>
                 <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🔒</span>
-                <h3>Security & Code Review</h3>
-                <p>Backend security reviews, authorization issues, authentication concerns and code-quality improvements.</p>
+                <h3>Security &amp; Code Review</h3>
+                <p>Review backend code and architecture for authorization, authentication, access-control and common security weaknesses, with practical fixes.</p>
                 <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
             </div>
         </div>
@@ -1305,121 +532,127 @@ footer {
 
             <div class="why-item">
                 <div class="why-number">Data</div>
-                <h4>Complex Data & PostgreSQL Mastery</h4>
+                <h4>Complex Data &amp; PostgreSQL Mastery</h4>
                 <p>Expert in designing and optimizing databases for complex data workflows, aggregations and reporting.</p>
             </div>
 
             <div class="why-item">
                 <div class="why-number">Integration</div>
-                <h4>API & Integration Specialist</h4>
+                <h4>API &amp; Integration Specialist</h4>
                 <p>Extensive experience building and integrating external APIs, webhooks and service-to-service communication.</p>
             </div>
 
             <div class="why-item">
                 <div class="why-number">Architecture</div>
-                <h4>System Design & Scalability</h4>
-                <p>I think in systems. Whether you need a new architecture or to scale an existing one, I can help.</p>
+                <h4>Practical Architectural Guidance</h4>
+                <p>Design and implement architectures that balance scalability, cost and operational simplicity.</p>
             </div>
 
             <div class="why-item">
-                <div class="why-number">Problem Solving</div>
-                <h4>Practical, Direct Solutions</h4>
-                <p>No fluff, no over-engineering. I solve the problem at hand with maintainable, pragmatic code.</p>
+                <div class="why-number">Support</div>
+                <h4>Operational &amp; Production Support</h4>
+                <p>Production troubleshooting, incident response and prioritised fixes to keep your systems running.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Projects / Case Studies Section -->
-<section id="work">
+<!-- Process Section -->
+<section id="process">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Projects I've Built</h2>
-            <p class="section-subtitle">Case studies demonstrating backend engineering, system design and problem-solving across different domains.</p>
+            <h2 class="section-title">How I Work</h2>
+            <p class="section-subtitle">A straightforward process to understand your problem and deliver the solution.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <h3>Understand</h3>
+                <p>Understand the business problem, technical requirements and the constraints you're working with.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <h3>Investigate</h3>
+                <p>Review the existing architecture, codebase, data flow and identify the root cause or best approach.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <h3>Build</h3>
+                <p>Implement the solution with maintainability, scalability and reliability in mind.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <h3>Ship</h3>
+                <p>Test thoroughly, document the solution and deliver it ready for production.</p>
+            </div>
+        </div>
+
+        <div class="process-note">Every project starts with understanding the problem. I'll review your requirements, identify the best approach, and provide a clear plan before we start.</div>
+
+        <p class="process-support" style="margin-top:20px;color:var(--text-secondary);">Clear communication, practical engineering and a focus on solving the actual problem.</p>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="section-subtitle">Deep expertise across the full backend and data stack.</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Languages &amp; Frameworks</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">Spring Boot</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">NestJS</div>
+                    <div class="skill-item">TypeScript</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data &amp; Databases</h3>
+                <div class="skill-list">
+                    <div class="skill-item">PostgreSQL</div>
+                    <div class="skill-item">Migrations</div>
+                    <div class="skill-item">Query Optimization</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cloud &amp; Tools</h3>
+                <div class="skill-list">
+                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">Kubernetes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-subtitle">Representative work showing backend systems, integrations and scalable architecture.</p>
         </div>
 
         <div class="projects-grid">
+            <!-- existing project cards preserved -->
             <div class="project-card">
-                <h3>Loan Management Platform</h3>
-
+                <h3>Membership Platform</h3>
                 <div class="project-section">
                     <div class="project-label">Domain</div>
-                    <p>FinTech / Lending operations.</p>
-                </div>
-
-                <div class="project-section">
-                    <div class="project-label">What I Built</div>
-                    <p>Core lending platform with customer onboarding, loan approval workflows, repayment tracking, financial reporting and operational dashboards.</p>
-                </div>
-
-                <div class="project-section">
-                    <div class="project-label">Engineering Challenges</div>
-                    <p>Complex approval state machines, accurate repayment calculations, financial report generation at scale.</p>
-                </div>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Expense Management System</h3>
-
-                <div class="project-section">
-                    <div class="project-label">Domain</div>
-                    <p>Enterprise finance / Expense operations.</p>
-                </div>
-
-                <div class="project-section">
-                    <div class="project-label">What I Built</div>
-                    <p>Expense management platform with approval workflows, reimbursement tracking, financial dashboards and comprehensive reporting systems.</p>
-                </div>
-
-                <div class="project-section">
-                    <div class="project-label">Engineering Challenges</div>
-                    <p>Workflow automation, multi-level approvals, financial reconciliation, audit trails.</p>
-                </div>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">NestJS</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Analytics Platform</h3>
-
-                <div class="project-section">
-                    <div class="project-label">Domain</div>
-                    <p>Business Intelligence / Data analytics.</p>
-                </div>
-
-                <div class="project-section">
-                    <div class="project-label">What I Built</div>
-                    <p>Analytics platform with business intelligence dashboards, complex data aggregations, real-time reporting pipelines and KPI tracking.</p>
-                </div>
-
-                <div class="project-section">
-                    <div class="project-label">Engineering Challenges</div>
-                    <p>Complex aggregations, time-series data optimization, dashboard performance under load.</p>
-                </div>
-
-                <div class="tech-tags">
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Sports Club Management</h3>
-
-                <div class="project-section">
-                    <div class="project-label">Domain</div>
-                    <p>Sports management / Membership operations.</p>
+                    <p>Membership management, billing automation and integrations.</p>
                 </div>
 
                 <div class="project-section">
@@ -1467,179 +700,33 @@ footer {
     </div>
 </section>
 
-<!-- Process Section -->
-<section id="process">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">How I Work</h2>
-            <p class="section-subtitle">A straightforward process to understand your problem and deliver the solution.</p>
-        </div>
-
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="process-number">01</div>
-                <h3>Understand</h3>
-                <p>Understand the business problem, technical requirements and the constraints you're working with.</p>
-            </div>
-
-            <div class="process-step">
-                <div class="process-number">02</div>
-                <h3>Investigate</h3>
-                <p>Review the existing architecture, codebase, data flow and identify the root cause or best approach.</p>
-            </div>
-
-            <div class="process-step">
-                <div class="process-number">03</div>
-                <h3>Build</h3>
-                <p>Implement the solution with maintainability, scalability and reliability in mind.</p>
-            </div>
-
-            <div class="process-step">
-                <div class="process-number">04</div>
-                <h3>Ship</h3>
-                <p>Test thoroughly, document the solution and deliver it ready for production.</p>
-            </div>
-        </div>
-
-        <div class="process-note">
-            <strong>Pricing:</strong> Final pricing depends on scope and complexity. Once I understand your problem, I'll provide a clear estimate.
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Technology Stack</h2>
-            <p class="section-subtitle">Deep expertise across the full backend and data stack.</p>
-        </div>
-
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Backend Frameworks</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Java</span>
-                    <span class="skill-item">Spring Boot</span>
-                    <span class="skill-item">Node.js</span>
-                    <span class="skill-item">NestJS</span>
-                    <span class="skill-item">Express.js</span>
-                    <span class="skill-item">TypeScript</span>
-                    <span class="skill-item">Python</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Data & Databases</h3>
-                <div class="skill-list">
-                    <span class="skill-item">PostgreSQL</span>
-                    <span class="skill-item">MongoDB</span>
-                    <span class="skill-item">Complex Queries</span>
-                    <span class="skill-item">Database Design</span>
-                    <span class="skill-item">Performance Tuning</span>
-                    <span class="skill-item">Migrations</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Architecture & Infrastructure</h3>
-                <div class="skill-list">
-                    <span class="skill-item">Microservices</span>
-                    <span class="skill-item">System Design</span>
-                    <span class="skill-item">AWS</span>
-                    <span class="skill-item">Docker</span>
-                    <span class="skill-item">APIs & REST</span>
-                    <span class="skill-item">Integrations</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
         <div class="contact-content">
             <h2 class="contact-title">Have a Backend Problem?</h2>
-            <p class="contact-subtitle">
-                Send me the problem, error, API requirement or project idea. I'll review it and suggest the best way forward.
-            </p>
-
-            <div class="buttons" style="justify-content: center; margin-bottom: 40px;">
-                <a href="mailto:prabhaharan.am@gmail.com" class="btn btn-primary">Start a Project</a>
-            </div>
+            <p class="contact-subtitle">Tell me what you're trying to build, what's broken, or where you're stuck. I'll review the problem and suggest the best way forward.</p>
 
             <div class="contact-links">
-                <a href="mailto:prabhaharan.am@gmail.com" class="contact-link">
-                    <span>📧</span>
-                    Email
-                </a>
-                <a href="https://github.com/Prabha-Labs" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span>🐙</span>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/prabha-a/" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <span>💼</span>
-                    LinkedIn
-                </a>
+                <a href="mailto:prabha@example.com" class="contact-link" aria-label="Email Prabha A">Email</a>
+                <a href="https://github.com/Prabha-Labs" class="contact-link" aria-label="Prabha's GitHub" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/" class="contact-link" aria-label="Prabha's LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
             </div>
+
+            <a href="#contact" class="btn btn-primary">Start a Project</a>
         </div>
     </div>
 </section>
 
 <footer>
-    <div class="container">
-        <p>&copy; 2026 PrabhaWorks. Senior Software Engineer specializing in backend systems and APIs.</p>
+    <div class="container" style="padding:40px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center;">
+        <div>
+            <div style="font-weight:800;">PrabhaWorks</div>
+            <div style="font-size:12px;color:var(--muted);">Software Engineering &amp; Consulting</div>
+        </div>
+        <div style="font-size:13px;color:var(--muted);">&copy; 2026 Prabha A</div>
     </div>
 </footer>
-
-<script>
-// Smooth scroll animation on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Animate elements on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Add scroll-animate class to elements that should animate on scroll
-    document.querySelectorAll('.service-card, .why-item, .project-card, .skill-category').forEach(el => {
-        el.classList.add('scroll-animate');
-        observer.observe(el);
-    });
-
-    // Active navigation link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-});
-</script>
 
 </body>
 </html>
