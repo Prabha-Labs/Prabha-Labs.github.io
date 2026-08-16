@@ -3,201 +3,728 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prabha A | Senior Software Engineer</title>
+<title>Prabha A — Senior Software Engineer | Backend, APIs & Systems</title>
 
-<meta name="description"
-content="Senior Full Stack Software Engineer with 6+ years of experience building FinTech, Analytics, Subscription Billing and Sports Management Platforms.">
+<meta name="description" content="Backend and full-stack software engineer helping startups and businesses build reliable systems, APIs, integrations and data-heavy applications. 6+ years experience with Java, Node.js, TypeScript, PostgreSQL and AWS.">
+
+<meta property="og:title" content="Prabha A — Senior Software Engineer | Backend, APIs & Systems">
+<meta property="og:description" content="Backend and full-stack software engineer helping startups and businesses build reliable systems, APIs, integrations and data-heavy applications.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prabha-labs.github.io/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prabha A — Senior Software Engineer | Backend, APIs & Systems">
+<meta name="twitter:description" content="Backend and full-stack software engineer helping startups and businesses build reliable systems, APIs, integrations and data-heavy applications.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --bg:#0f172a;
-    --card:#111827;
-    --primary:#3b82f6;
-    --text:#f8fafc;
-    --muted:#94a3b8;
-    --border:#1e293b;
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --card-hover: #1a202c;
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --accent: #60a5fa;
+    --text: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --muted: #94a3b8;
+    --border: #1e293b;
+    --success: #10b981;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
+html {
+    scroll-behavior: smooth;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 24px;
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(15,23,42,.9);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-    z-index:100;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-nav .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
 }
 
-.logo{
-    font-weight:800;
-    font-size:22px;
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    height: auto;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
+.logo {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.5px;
 }
 
-.nav-links a{
-    color:var(--muted);
-    text-decoration:none;
+.logo-brand {
+    color: var(--text);
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
+.logo-descriptor {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
 }
 
-.badge{
-    display:inline-block;
-    background:rgba(59,130,246,.15);
-    color:#60a5fa;
-    padding:8px 18px;
-    border-radius:999px;
-    margin-bottom:24px;
+.nav-center {
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
-.hero h1{
-    font-size:72px;
-    line-height:1.05;
-    max-width:900px;
-    margin-bottom:24px;
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
-.hero p{
-    font-size:22px;
-    color:var(--muted);
-    max-width:750px;
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.buttons{
-    margin-top:40px;
-    display:flex;
-    gap:20px;
+.nav-links a:hover {
+    color: var(--accent);
 }
 
-.btn{
-    padding:14px 28px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:600;
+.nav-cta {
+    display: none;
 }
 
-.btn-primary{
-    background:var(--primary);
-    color:white;
+.nav-cta.show {
+    display: inline-block;
 }
 
-.btn-secondary{
-    border:1px solid var(--border);
-    color:white;
+.btn-nav {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.3s ease;
 }
 
-section{
-    padding:120px 0;
+.btn-nav:hover {
+    background: var(--primary-dark);
 }
 
-.section-title{
-    font-size:48px;
-    margin-bottom:50px;
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-.grid{
-    display:grid;
-    gap:24px;
+.hero-content {
+    max-width: 800px;
+    animation: fadeInUp 0.8s ease-out;
 }
 
-.stats{
-    grid-template-columns:repeat(4,1fr);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:32px;
+.badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-bottom: 32px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.25);
 }
 
-.stat-number{
-    font-size:48px;
-    font-weight:800;
-    color:#60a5fa;
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-.projects{
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+.hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.8;
+    max-width: 650px;
 }
 
-.project h3{
-    margin-bottom:15px;
+.hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+    max-width: 700px;
 }
 
-.project p{
-    color:var(--muted);
+.highlight-item {
+    padding: 12px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
 }
 
-.tech{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:20px;
+.buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.tech span{
-    background:#1e293b;
-    padding:8px 14px;
-    border-radius:999px;
+.btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-footer{
-    text-align:center;
-    padding:40px;
-    color:var(--muted);
-    border-top:1px solid var(--border);
+.btn-primary {
+    background: var(--primary);
+    color: white;
 }
 
-@media(max-width:768px){
-
-.hero h1{
-    font-size:42px;
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
 }
 
-.stats{
-    grid-template-columns:1fr;
+.btn-secondary {
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    background: transparent;
 }
 
-.nav-links{
-    display:none;
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(59, 130, 246, 0.05);
 }
+
+/* Sections */
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.service-card .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 13px;
+}
+
+/* Why Section */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.why-item {
+    padding: 24px;
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.why-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--accent);
+}
+
+.why-number {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.why-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.why-item p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 28px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+}
+
+.project-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.project-section {
+    margin-bottom: 16px;
+}
+
+.project-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.tech-tag {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+/* Process Section */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.process-step {
+    position: relative;
+    padding-left: 60px;
+}
+
+.process-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.3;
+}
+
+.process-step h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.process-step p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.process-note {
+    padding: 20px;
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.skill-category {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.skill-category h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+/* Contact Section */
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.contact-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.contact-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.contact-link {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--muted);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    nav .container {
+        padding: 16px 0;
+    }
+
+    .nav-links {
+        gap: 24px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-center {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-highlights {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .services-grid,
+    .why-grid,
+    .projects-grid,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .contact-title {
+        font-size: 32px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    nav .container {
+        padding: 12px 0;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    .badge {
+        font-size: 12px;
+    }
 }
 </style>
 </head>
@@ -205,184 +732,416 @@ footer{
 <body>
 
 <nav>
-<div class="container">
-<div class="logo">Prabha A</div>
-
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-brand">PrabhaWorks</div>
+            <div class="logo-descriptor">By Prabha A</div>
+        </div>
+        <div class="nav-center">
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#skills">Skills</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="#contact" class="btn btn-nav">Start a Project</a>
+        </div>
+    </div>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
-<div class="container">
-
-<div class="badge">
-Senior Software Engineer • 6+ Years Experience
-</div>
-
-<h1>
-Building FinTech, Analytics &
-Enterprise Platforms at Scale
-</h1>
-
-<p>
-Full Stack Software Engineer specializing in Java, Spring Boot,
-Node.js, NestJS, Express.js and Python. Experienced in system design,
-microservices architecture, team leadership and enterprise software development.
-</p>
-
-<div class="buttons">
-<a href="#projects" class="btn btn-primary">View Projects</a>
-<a href="#contact" class="btn btn-secondary">Contact Me</a>
-</div>
-
-</div>
-</section>
-
-<section id="about">
-<div class="container">
-
-<h2 class="section-title">Career Highlights</h2>
-
-<div class="grid stats">
-
-<div class="card">
-<div class="stat-number">6+</div>
-Years Experience
-</div>
-
-<div class="card">
-<div class="stat-number">20+</div>
-Projects Delivered
-</div>
-
-<div class="card">
-<div class="stat-number">5+</div>
-Engineers Mentored
-</div>
-
-<div class="card">
-<div class="stat-number">100%</div>
-Full Stack Focus
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="projects">
-<div class="container">
-
-<h2 class="section-title">Products I've Built</h2>
-
-<div class="grid projects">
-
-<div class="card project">
-<h3>Loan Management Platform</h3>
-<p>
-Built customer onboarding, approval workflows,
-repayment tracking, reporting and financial operations.
-</p>
-</div>
-
-<div class="card project">
-<h3>Expense Management System</h3>
-<p>
-Developed approval workflows, reimbursement tracking,
-financial dashboards and reporting systems.
-</p>
-</div>
-
-<div class="card project">
-<h3>Analytics Platform</h3>
-<p>
-Created business intelligence dashboards,
-aggregations, reporting pipelines and KPI tracking.
-</p>
-</div>
-
-<div class="card project">
-<h3>Sports Club Management</h3>
-<p>
-Built membership management, billing,
-competition administration and integrations.
-</p>
-</div>
-
-<div class="card project">
-<h3>Subscription Billing Platform</h3>
-<p>
-Implemented recurring billing,
-invoice generation and payment workflows.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="skills">
-<div class="container">
-
-<h2 class="section-title">Technology Stack</h2>
-
-<div class="tech">
-<span>Java</span>
-<span>Spring Boot</span>
-<span>DBMS</span>
-<span>Node.js</span>
-<span>NestJS</span>
-<span>Express.js</span>
-<span>FoalTS</span>
-<span>Python</span>
-<span>TypeScript</span>
-<span>PostgreSQL</span>
-<span>MongoDB</span>
-<span>AWS</span>
-<span>Docker</span>
-<span>Microservices</span>
-<span>System Design</span>
-<span>LLD</span>
-<span>HLD</span>
-</div>
-
-</div>
-</section>
-
-<section id="contact">
     <div class="container">
+        <div class="hero-content">
+            <div class="badge">Freelance Software Engineer • 6+ Years Experience</div>
 
-        <h2 class="section-title">Let's Build Something Great</h2>
+            <h1>Build. Fix. Scale.</h1>
 
-        <p style="color:#94a3b8;font-size:20px;margin-bottom:40px;">
-            Open to Senior Software Engineering, Technical Leadership,
-            Consulting and Freelance Opportunities.
-        </p>
+            <p>
+                Senior Software Engineer helping startups and businesses build reliable backend systems, APIs, integrations and data-heavy applications.
+            </p>
 
-        <div class="tech">
+            <div class="hero-highlights">
+                <div class="highlight-item">6+ Years Experience</div>
+                <div class="highlight-item">Backend Specialist</div>
+                <div class="highlight-item">APIs & Integrations</div>
+                <div class="highlight-item">PostgreSQL & Data</div>
+                <div class="highlight-item">Java • Node.js • TypeScript</div>
+                <div class="highlight-item">System Design</div>
+            </div>
 
-            <a href="mailto:prabhaharan.am@gmail.com">
-                📧 prabhaharan.am@gmail.com
-            </a>
-
-            <a href="https://github.com/Prabha-Labs" target="_blank">
-                🐙 GitHub
-            </a>
-
+            <div class="buttons">
+                <a href="#contact" class="btn btn-primary">Start a Project</a>
+                <a href="#work" class="btn btn-secondary">View My Work</a>
+            </div>
         </div>
-
     </div>
 </section>
 
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">What I Can Help With</h2>
+            <p class="section-subtitle">I specialize in solving complex backend problems and building scalable systems for startups and established businesses.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3>Backend Development</h3>
+                <p>Java, Spring Boot, Node.js, NestJS and TypeScript backend systems built for performance and maintainability.</p>
+                <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔌</span>
+                <h3>API Development & Integration</h3>
+                <p>REST APIs, third-party integrations, webhooks and external service integrations that work reliably at scale.</p>
+                <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">💾</span>
+                <h3>PostgreSQL & Database Optimization</h3>
+                <p>Complex queries, indexes, aggregation, migrations and performance improvements for data-heavy systems.</p>
+                <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🐛</span>
+                <h3>Bug Fixing & Production Troubleshooting</h3>
+                <p>Difficult backend bugs, API failures, database problems and production issues that need immediate attention.</p>
+                <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🏗️</span>
+                <h3>System Design</h3>
+                <p>Scalable architectures, microservices design, database design and technical architecture for growing systems.</p>
+                <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔒</span>
+                <h3>Security & Code Review</h3>
+                <p>Backend security reviews, authorization issues, authentication concerns and code-quality improvements.</p>
+                <a href="#contact" class="btn btn-secondary">Discuss Your Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Work With Me Section -->
+<section id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Why Work With Me</h2>
+            <p class="section-subtitle">I bring deep engineering expertise and practical problem-solving to every project.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">Experience</div>
+                <h4>6+ Years of Production Engineering</h4>
+                <p>Proven track record building and maintaining production systems that handle real business operations.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-number">Expertise</div>
+                <h4>Backend-Heavy Specialization</h4>
+                <p>Deep focus on backend systems, databases, APIs and infrastructure. I understand the layers that matter.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-number">Data</div>
+                <h4>Complex Data & PostgreSQL Mastery</h4>
+                <p>Expert in designing and optimizing databases for complex data workflows, aggregations and reporting.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-number">Integration</div>
+                <h4>API & Integration Specialist</h4>
+                <p>Extensive experience building and integrating external APIs, webhooks and service-to-service communication.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-number">Architecture</div>
+                <h4>System Design & Scalability</h4>
+                <p>I think in systems. Whether you need a new architecture or to scale an existing one, I can help.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-number">Problem Solving</div>
+                <h4>Practical, Direct Solutions</h4>
+                <p>No fluff, no over-engineering. I solve the problem at hand with maintainable, pragmatic code.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects / Case Studies Section -->
+<section id="work">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Projects I've Built</h2>
+            <p class="section-subtitle">Case studies demonstrating backend engineering, system design and problem-solving across different domains.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Loan Management Platform</h3>
+
+                <div class="project-section">
+                    <div class="project-label">Domain</div>
+                    <p>FinTech / Lending operations.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">What I Built</div>
+                    <p>Core lending platform with customer onboarding, loan approval workflows, repayment tracking, financial reporting and operational dashboards.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">Engineering Challenges</div>
+                    <p>Complex approval state machines, accurate repayment calculations, financial report generation at scale.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Expense Management System</h3>
+
+                <div class="project-section">
+                    <div class="project-label">Domain</div>
+                    <p>Enterprise finance / Expense operations.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">What I Built</div>
+                    <p>Expense management platform with approval workflows, reimbursement tracking, financial dashboards and comprehensive reporting systems.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">Engineering Challenges</div>
+                    <p>Workflow automation, multi-level approvals, financial reconciliation, audit trails.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">NestJS</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Analytics Platform</h3>
+
+                <div class="project-section">
+                    <div class="project-label">Domain</div>
+                    <p>Business Intelligence / Data analytics.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">What I Built</div>
+                    <p>Analytics platform with business intelligence dashboards, complex data aggregations, real-time reporting pipelines and KPI tracking.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">Engineering Challenges</div>
+                    <p>Complex aggregations, time-series data optimization, dashboard performance under load.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Sports Club Management</h3>
+
+                <div class="project-section">
+                    <div class="project-label">Domain</div>
+                    <p>Sports management / Membership operations.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">What I Built</div>
+                    <p>Membership management system, billing automation, competition administration and external service integrations.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">Engineering Challenges</div>
+                    <p>Recurring billing logic, competition state management, third-party API integrations.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">NestJS</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Subscription Billing Platform</h3>
+
+                <div class="project-section">
+                    <div class="project-label">Domain</div>
+                    <p>SaaS / Subscription management.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">What I Built</div>
+                    <p>Subscription billing platform with recurring billing logic, invoice generation, payment workflows and financial reconciliation.</p>
+                </div>
+
+                <div class="project-section">
+                    <div class="project-label">Engineering Challenges</div>
+                    <p>Accurate recurring billing, payment retries, invoice consistency, financial reporting.</p>
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section id="process">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">How I Work</h2>
+            <p class="section-subtitle">A straightforward process to understand your problem and deliver the solution.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <h3>Understand</h3>
+                <p>Understand the business problem, technical requirements and the constraints you're working with.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <h3>Investigate</h3>
+                <p>Review the existing architecture, codebase, data flow and identify the root cause or best approach.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <h3>Build</h3>
+                <p>Implement the solution with maintainability, scalability and reliability in mind.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <h3>Ship</h3>
+                <p>Test thoroughly, document the solution and deliver it ready for production.</p>
+            </div>
+        </div>
+
+        <div class="process-note">
+            <strong>Pricing:</strong> Final pricing depends on scope and complexity. Once I understand your problem, I'll provide a clear estimate.
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="section-subtitle">Deep expertise across the full backend and data stack.</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Backend Frameworks</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">Spring Boot</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">NestJS</span>
+                    <span class="skill-item">Express.js</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">Python</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data & Databases</h3>
+                <div class="skill-list">
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">Complex Queries</span>
+                    <span class="skill-item">Database Design</span>
+                    <span class="skill-item">Performance Tuning</span>
+                    <span class="skill-item">Migrations</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Architecture & Infrastructure</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Microservices</span>
+                    <span class="skill-item">System Design</span>
+                    <span class="skill-item">AWS</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">APIs & REST</span>
+                    <span class="skill-item">Integrations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="contact-content">
+            <h2 class="contact-title">Have a Backend Problem?</h2>
+            <p class="contact-subtitle">
+                Send me the problem, error, API requirement or project idea. I'll review it and suggest the best way forward.
+            </p>
+
+            <div class="buttons" style="justify-content: center; margin-bottom: 40px;">
+                <a href="mailto:prabhaharan.am@gmail.com" class="btn btn-primary">Start a Project</a>
+            </div>
+
+            <div class="contact-links">
+                <a href="mailto:prabhaharan.am@gmail.com" class="contact-link">
+                    <span>📧</span>
+                    Email
+                </a>
+                <a href="https://github.com/Prabha-Labs" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span>🐙</span>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/prabha-a/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span>💼</span>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
-© 2026 Prabha A • Senior Full Stack Software Engineer
+    <div class="container">
+        <p>&copy; 2026 PrabhaWorks. Senior Software Engineer specializing in backend systems and APIs.</p>
+    </div>
 </footer>
 
 </body>
